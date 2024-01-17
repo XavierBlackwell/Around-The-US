@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Around The U.S</title>
+    <link href="./pages/index.css" rel="stylesheet" />
+  </head>
+  <body class="page">
+    <div class="page__content">
+      <header class="header page__section">
+        <img
+          src="./images/logo.svg"
+          alt="Around The U.S logo"
+          class="header__logo"
+        />
+      </header>
+      <main class="content">
+        <section class="profile page__section">
+          <img
+            src="./images/jacques-cousteau.jpg"
+            alt="avatar"
+            class="profile__image"
+          />
+          <div class="profile__info">
+            <h1 class="profile__title">Jacques Cousteau</h1>
+            <button
+              type="button"
+              class="profile__edit-button"
+              id="profile-edit-button"
+            ></button>
+            <p class="profile__description">Explorer</p>
+          </div>
+          <button type="button" class="profile__add-button"></button>
+        </section>
+        <section class="cards page__section">
+          <ul class="cards__list"></ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">&copy; 2022 Around The U.S.</p>
+      </footer>
+    </div>
+
+    <!--EDIT MODAL-->
+    <div class="modal" id="profile-edit-modal">
+      <div class="modal__container">
+        <button
+          class="modal__close"
+          id="modal-close-button"
+          type="button"
+        ></button>
+        <h2 class="modal__heading">Edit Profile</h2>
+        <form class="modal__form" id="edit-profile-form">
+          <input
+            type="text"
+            name="title"
+            id="profile-title-input"
+            placeholder="Name"
+            class="modal__input"
+            minlength="2"
+            maxlength="40"
+            required
+          />
+          <span class="modal__error" id="profile-title-input-error"></span>
+
+          <input
+            type="text"
+            name="description"
+            id="profile-description-input"
+            placeholder="Description"
+            class="modal__input"
+            minlength="2"
+            maxlength="200"
+            required
+          />
+          <span
+            class="modal__error"
+            id="profile-description-input-error"
+          ></span>
+          <button class="modal__button modal__button_disabled" type="submit">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!--ADD CARD MODAL-->
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button
+          class="modal__close"
+          id="modal-add-card-close-button"
+          type="button"
+        ></button>
+        <h2 class="modal__heading">New Place</h2>
+        <form class="modal__form" id="add-card-form">
+          <input
+            type="text"
+            name="title"
+            id="card-title-input"
+            placeholder="Title"
+            class="modal__input modal__input_type_title"
+            minlength="1"
+            maxlength="30"
+            required
+          />
+          <span class="modal__error" id="card-title-input-error"></span>
+
+          <input
+            type="url"
+            name="url"
+            id="card-url-input"
+            placeholder="Image URL"
+            class="modal__input modal__input_type_url"
+            required
+          />
+          <span class="modal__error" id="card-url-input-error"></span>
+          <button
+            class="modal__button modal__button_disabled"
+            type="submit"
+            disabled
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!--PREVIEW IMAGE MODAL-->
+    <div class="modal" id="preview-image-modal">
+      <div class="modal__image-container">
+        <button
+          class="modal__close modal__close_preview-image"
+          id="modal-preview-image-close-button"
+          type="button"
+        ></button>
+        <img src="#" class="modal__image" alt="" />
+        <p class="modal__image-title"></p>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <li class="card">
+        <img src="" class="card__image" alt="" />
+        <button class="card__trash-button"></button>
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button"></button>
+        </div>
+      </li>
+    </template>
+
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
+  </body>
+</html>
