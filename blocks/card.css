@@ -15,7 +15,8 @@
 
 .card__trash-button {
   position: absolute;
-  background-image: url(../images/Trash.svg);
+  background-image: url(../images/trash.svg);
+  background-color: transparent;
   margin-top: 15px;
   margin-left: 250px;
   width: 18px;
